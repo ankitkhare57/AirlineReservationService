@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="AdministratorNamespace" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="AdministratorNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="AdministratorNamespace/Imports">
+      <xsd:import namespace="AdministratorNamespace" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAdministrator_createNewFlight_InputMessage">
+    <wsdl:part name="parameters" element="tns:createNewFlight" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrator_createNewFlight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createNewFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrator_showAllFlights_InputMessage">
+    <wsdl:part name="parameters" element="tns:showAllFlights" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrator_showAllFlights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:showAllFlightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrator_showSeatingChart_InputMessage">
+    <wsdl:part name="parameters" element="tns:showSeatingChart" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrator_showSeatingChart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:showSeatingChartResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAdministrator">
+    <wsdl:operation name="createNewFlight">
+      <wsdl:input wsaw:Action="AdministratorNamespace/IAdministrator/createNewFlight" message="tns:IAdministrator_createNewFlight_InputMessage" />
+      <wsdl:output wsaw:Action="AdministratorNamespace/IAdministrator/createNewFlightResponse" message="tns:IAdministrator_createNewFlight_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="showAllFlights">
+      <wsdl:input wsaw:Action="AdministratorNamespace/IAdministrator/showAllFlights" message="tns:IAdministrator_showAllFlights_InputMessage" />
+      <wsdl:output wsaw:Action="AdministratorNamespace/IAdministrator/showAllFlightsResponse" message="tns:IAdministrator_showAllFlights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="showSeatingChart">
+      <wsdl:input wsaw:Action="AdministratorNamespace/IAdministrator/showSeatingChart" message="tns:IAdministrator_showSeatingChart_InputMessage" />
+      <wsdl:output wsaw:Action="AdministratorNamespace/IAdministrator/showSeatingChartResponse" message="tns:IAdministrator_showSeatingChart_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
